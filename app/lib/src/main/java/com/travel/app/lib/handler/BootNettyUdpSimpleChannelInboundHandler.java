@@ -1,4 +1,4 @@
-package com.travel.lib.netty.handler;
+package com.travel.app.lib.handler;
 
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
@@ -15,9 +15,9 @@ public class BootNettyUdpSimpleChannelInboundHandler extends SimpleChannelInboun
         try {
             String strdata = msg.content().toString(CharsetUtil.UTF_8);
             // Print the received message
-            log.info("---------------------receive data--------------------------");
-            log.info(strdata);
-            log.info("---------------------receive data--------------------------");
+//            log.info("---------------------receive data--------------------------");
+//            log.info(strdata);
+//            log.info("---------------------receive data--------------------------");
             // Received udp Message, you can return the message in the same way, such as return timestamp
             ctx.writeAndFlush(new DatagramPacket(Unpooled.copiedBuffer("ok", CharsetUtil.UTF_8), msg.sender()));
         } catch (Exception e) {

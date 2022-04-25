@@ -1,6 +1,6 @@
-package com.travel.lib.netty.UDPServer;
+package com.travel.app.lib.UDPServer;
 
-import com.travel.lib.netty.handler.BootNettyUdpSimpleChannelInboundHandler;
+import com.travel.app.lib.handler.BootNettyUdpSimpleChannelInboundHandler;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelHandler;
@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class NettyServer {
     public void bind(int port) {
-        log.info("-------------------------------udpServer-------------------------");
+        //   log.info("-------------------------------udpServer-------------------------");
         // Represents a server connection listening thread group that specifically accepts  accept  New client client  Connect
         EventLoopGroup bossLoopGroup  = new NioEventLoopGroup();
         try {
@@ -29,11 +29,12 @@ public class NettyServer {
             serverBootstrap = serverBootstrap.handler((ChannelHandler) new BootNettyUdpSimpleChannelInboundHandler());
             //6 , binding server By calling the sync The () method blocks asynchronously until the binding succeeds
             ChannelFuture f = serverBootstrap.bind(port).sync();
-            log.info(NettyServer.class.getName()+" started and listend on "+f.channel().localAddress());
+            //    log.info(NettyServer.class.getName()+" started and listend on "+f.channel().localAddress());
             //7 Listening for channel closure events, the application will 1 Wait until channel Shut down
             f.channel().closeFuture().sync();
         } catch (Exception e) {
             // TODO: handle exception
+            e.printStackTrace();
         } finally {
             System.out.println("netty udp close!");
             //8  Shut down EventLoopGroup ,

@@ -5,6 +5,13 @@ plugins {
 group 'com.travel'
 version '0.0.1-SNAPSHOT'
 
+bootJar {
+    enabled = true
+}
+jar {
+    enabled = false
+}
+
 repositories {
     mavenCentral()
 }

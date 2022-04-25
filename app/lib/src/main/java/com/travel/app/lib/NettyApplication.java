@@ -1,7 +1,6 @@
-package com.travel.lib.netty;
+package com.travel.app.lib;
 
-
-import com.travel.lib.netty.UDPServer.NettyServer;
+import com.travel.app.lib.UDPServer.NettyServer;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,6 +17,6 @@ public class NettyApplication implements CommandLineRunner {
     @Async
     @Override
     public void run(String[] args){
-        new NettyServer().bind(8080);
+        new NettyServer().bind(8000);
     }
 }
