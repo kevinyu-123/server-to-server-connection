@@ -42,4 +42,14 @@ subprojects {
         useJUnitPlatform()
     }
 }
+project(':app:login-app') {
+    dependencies {
+        implementation project(':app:netty')
+    }
+}
+project(':app:shop-app') {
+    dependencies {
+        implementation project(':app:netty')
+    }
+}
 

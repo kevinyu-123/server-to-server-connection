@@ -6,10 +6,10 @@ group 'com.travel'
 version '0.0.1-SNAPSHOT'
 
 bootJar {
-    enabled = true
+    enabled = false
 }
 jar {
-    enabled = false
+    enabled = true
 }
 
 repositories {
