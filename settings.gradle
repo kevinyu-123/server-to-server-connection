@@ -3,4 +3,6 @@ include 'app:login'
 findProject(':app:login')?.name = 'login-app'
 include 'app:shop'
 findProject(':app:shop')?.name = 'shop-app'
+include 'lib:netty'
+findProject(':lib:netty')?.name = 'netty'
 
