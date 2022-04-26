@@ -1,16 +1,35 @@
 package com.travel.app.login.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import com.travel.app.login.dto.ResponseDto;
+import com.travel.app.login.dto.TestDto;
+import com.travel.app.login.service.RestTService;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class LoginController {
 
+    private final RestTService service;
+
+    public LoginController(RestTService service){
+        this.service = service;
+    }
 
     @GetMapping("")
     public String test(){
         return "login server";
     }
+
+    @GetMapping ("/message")
+    public ResponseDto sendMessage( ){
+
+        return service.sendMessage();
+    }
+
+
+
+
+
+
 }
