@@ -5,4 +5,6 @@ include 'app:shop'
 findProject(':app:shop')?.name = 'shop-app'
 include 'app:lib'
 findProject(':app:lib')?.name = 'netty'
+include 'app:client'
+findProject(':app:client')?.name = 'client'
 

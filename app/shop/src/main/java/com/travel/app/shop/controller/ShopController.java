@@ -20,8 +20,10 @@ public class ShopController {
         Message res = new Message();
         if(message.equals("login-server")){
             res.setStatus(StatusType.OK);
+            res.setMessage("성공");
         }else{
             res.setStatus(StatusType.BAD_REQUEST);
+            res.setMessage("실패");
         }
         return res;
     }

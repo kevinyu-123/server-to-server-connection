@@ -36,7 +36,7 @@ public class NettyServer {
             // TODO: handle exception
             e.printStackTrace();
         } finally {
-            System.out.println("netty udp close!");
+            log.info("netty udp close!");
             //8  Shut down EventLoopGroup ,
             bossLoopGroup.shutdownGracefully();
         }
