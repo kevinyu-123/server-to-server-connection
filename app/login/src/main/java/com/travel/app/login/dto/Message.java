@@ -1,7 +1,8 @@
-package com.travel.app.shop.dto;
+package com.travel.app.login.dto;
+
 
 import lombok.Data;
-
+import lombok.NoArgsConstructor;
 
 @Data
 public class Message {
@@ -9,13 +10,14 @@ public class Message {
     private StatusType status;
     private String message;
     private long responseTime;
-    private ShopDto data;
+    private AccountDto data;
+
 
     public Message() {
+
         this.status = StatusType.NOT_FOUND;
         this.message = null;
-        this.responseTime = Long.parseLong(null);
         this.data = null;
+        this.responseTime = 0;
     }
-
 }

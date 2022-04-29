@@ -53,9 +53,4 @@ project(':app:shop-app') {
         implementation project(':app:netty')
     }
 }
-project(':app:client') {
-    dependencies {
-        implementation project(':app:shop-app')
-        implementation project(':app:login-app')
-    }
-}
+

@@ -1,6 +1,11 @@
-plugins {
-    id 'java'
+
+bootJar {
+    enabled = true
 }
+jar {
+    enabled = false
+}
+
 
 group 'com.travel'
 version '0.0.1-SNAPSHOT'
