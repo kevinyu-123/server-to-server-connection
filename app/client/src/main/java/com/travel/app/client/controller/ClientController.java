@@ -30,7 +30,7 @@ public class ClientController {
         RestTemplate template = new RestTemplate();
         List<ResponseEntity<Message>> result = new ArrayList<>();
 
-        for(int i=0;i<10;i++){
+        for(int i=0;i<5;i++){ //시간
             long sTime = System.currentTimeMillis();
             int finalI = i;
             Thread thread = new Thread(()->{
@@ -44,12 +44,13 @@ public class ClientController {
                         .toUri();
 
                 result.add(template.getForEntity(uri, Message.class));
+
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(10);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                log.info("thread ["+ (finalI+1) +"] : "+String.valueOf(result));
+                log.info("thread ["+ (finalI+1) +"] result : "+String.valueOf(result));
 
             });
             thread.start();

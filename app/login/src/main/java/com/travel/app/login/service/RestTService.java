@@ -50,13 +50,22 @@ public class RestTService {
             Message message = new Message();
             AccountDto dto = new AccountDto();
 
-            dto.setDob("1999-93-93");
-            dto.setName("test");
-            dto.setPhoneNo(01033334444);
+            dto.setPhoneNo(1234545);
             dto.setUserNo(userNo);
 
-            message.setMessage("return data");
+            message.setMessage("return data 1");
             message.setStatus(StatusType.OK);
+
+
+            if(userNo%2 == 0){
+                dto.setName("test2");
+                dto.setDob("2222-22-22");
+                message.setStatus(StatusType.BAD_REQUEST);
+            }else{
+                dto.setDob("1999-93-93");
+                dto.setName("test");
+                message.setMessage("write data 1");
+            }
             message.setData(dto);
 
             long eTime = System.currentTimeMillis();
